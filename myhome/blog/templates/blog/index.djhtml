@@ -1,0 +1,16 @@
+{% extends 'base.djhtml' %}
+
+{% block body %}
+{% if blog_posts %}
+  <ul>
+    {% for bp in blog_posts %}
+      <li>
+        <h3>{{ bp.title }}</h3>
+        <div>{{ bp.content }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No Items</p>
+{% endif %}
+{% endblock %}
