@@ -4,4 +4,4 @@ from blog import views
 urlpatterns = patterns(
     '',
     url(r'^post/(?P<post_id>\d+)/$', views.post, name='post'),
-    url(r'^$', views.index, name='index'))
+    url(r'^', views.index, name='index'))

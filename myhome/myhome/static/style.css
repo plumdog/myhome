@@ -45,6 +45,14 @@ p {
 	margin-right: 40px;
 }
 
+.blog-posts .tags {
+	float: right;
+}
+
+.blog-posts .tags a {
+	margin: 0 10px;
+}
+
 .blog-post h2 {
 	font-size: 48px;
 }

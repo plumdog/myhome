@@ -6,6 +6,15 @@
 
 <div class="blog-post">
   <h2>{{ bp.title }}</h2>
+  {% if bp.blog_post_tags.all %}
+    <p>
+      <span class="tags">Tags:
+        {% for tag in bp.blog_post_tags.all %}
+          <a href="{% url 'blog:index' %}?tag={{ tag.id }}">{{ tag.name }}</a>
+        {% endfor %}
+      </span>
+    </p>
+  {% endif %}
   <div class="blog-post-content">{{ bp.content|markdown }}</div>
 </div>
 
