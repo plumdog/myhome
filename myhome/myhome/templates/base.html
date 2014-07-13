@@ -8,16 +8,19 @@
   <meta name="author" content="" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   {% load staticfiles %}
-  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+  <script type="text/javascript" src="{% static 'app.js' %}"></script>
 </head>
 
 <body>
-  <div class="navbar">
+  <div class="navbar" id="top-navbar">
     <a href="{% url 'home:index' %}">Home</a>
 	<a href="{% url 'blog:index' %}">Blog</a>
+	<span class="checkbox">Auto Width? <input type="checkbox" name="fixed-width-toggle" id="fixed-width-toggle" /></span>
   </div>
-  <div class="container">
+  <div class="container" id="content-container">
     {% block content %}{% endblock %}
   </div>
 </body>

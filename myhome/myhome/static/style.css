@@ -18,9 +18,18 @@ body {
 	padding: 10px 10px 0;
 }
 
+.navbar span.checkbox {
+	float: right;
+	color: #aaa;
+}
+
 .navbar, .container {
 	max-width: 768px;
 	margin: 0 auto;
+}
+
+.navbar.full, .container.full {
+	max-width: none;
 }
 
 .container {
