@@ -1,3 +1,4 @@
 Django
 git+git://github.com/plumdog/django-markdown-deux
 git+git://github.com/django/django.git@stable/1.7.x
+requests
