@@ -4,7 +4,11 @@ from django.http import HttpResponse
 from .models import BlogPost
 
 def index(request):
-    blog_posts = BlogPost.objects.order_by('-datetime')
+    tag = request.GET.get('tag')
+    if tag:
+        blog_posts = BlogPost.objects.filter(blog_post_tags__id=tag).order_by('-datetime')
+    else:
+        blog_posts = BlogPost.objects.order_by('-datetime')
     context = {'blog_posts': blog_posts}
     return render(request, 'blog/index.djhtml', context)
 
