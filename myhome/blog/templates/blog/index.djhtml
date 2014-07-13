@@ -1,14 +1,16 @@
 {% extends 'base.djhtml' %}
 
+{% load markdown_deux_tags %}
+
 {% block body %}
 
 <h1>Blog</h1>
 
 {% if blog_posts %}
   {% for bp in blog_posts %}
-	<div class="blog-post">
+    <div class="blog-post">
       <h2>{{ bp.title }}</h2>
-      <div class="blog-post-content">{{ bp.content }}</div>
+      <div class="blog-post-content">{{ bp.content|markdown }}</div>
     </div>
   {% endfor %}
 {% else %}
