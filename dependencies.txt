@@ -1,1 +1,2 @@
 Django
+git+git://github.com/plumdog/django-markdown-deux
