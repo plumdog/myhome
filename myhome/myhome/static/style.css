@@ -29,6 +29,11 @@ body {
 
 h1 {
 	font-size: 64px;
+	margin: 32px 0px;
+}
+
+h2 {
+	font-size: 48px;
 }
 
 p {
@@ -49,4 +54,21 @@ p {
 
 .blog-post-content code {
 	font-size: 18px;
+}
+
+.about-me h3 {
+	font-size: 36px;
+	margin-bottom: 8px;
+}
+
+.about-me h3 span {
+	font-size: 18px;
+}
+
+.about-me p {
+	margin: 10px 0;
+}
+
+.projects a.project {
+	font-weight: bold;
 }
