@@ -89,4 +89,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myhome', 'static'),)
 
-TEMPLATE_DIRS = os.path.join(BASE_DIR, 'myhome', 'templates')
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'myhome', 'templates'),)
