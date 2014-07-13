@@ -35,6 +35,10 @@ p {
 	font-size: 28px;
 }
 
+.blog-posts a {
+	margin-right: 40px;
+}
+
 .blog-post h2 {
 	font-size: 48px;
 }

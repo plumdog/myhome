@@ -1,0 +1,12 @@
+{% extends 'base.djhtml' %}
+
+{% load markdown_deux_tags %}
+
+{% block body %}
+
+<div class="blog-post">
+  <h2>{{ bp.title }}</h2>
+  <div class="blog-post-content">{{ bp.content|markdown }}</div>
+</div>
+
+{% endblock %}
