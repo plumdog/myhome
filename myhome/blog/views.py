@@ -16,9 +16,9 @@ def index(request):
 
     blog_posts = blog_posts.filter(live=True).order_by('-datetime')
     context = {'blog_posts': blog_posts, 'tag': tag}
-    return render(request, 'blog/index.djhtml', context)
+    return render(request, 'blog/index.html', context)
 
 def post(request, post_id):
     blog_post = get_object_or_404(BlogPost, pk=post_id)
     context = {'bp': blog_post}
-    return render(request, 'blog/blog_post.djhtml', context)
+    return render(request, 'blog/blog_post.html', context)
