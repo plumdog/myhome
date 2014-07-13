@@ -11,6 +11,7 @@ class BlogPost(models.Model):
     datetime = models.DateTimeField()
     title = models.CharField(max_length=255)
     content = models.TextField()
+    live = models.BooleanField(default=False)
 
     blog_post_tags = models.ManyToManyField(BlogPostTag, blank=True)
 
