@@ -19,7 +19,8 @@ body {
 }
 
 .navbar, .container {
-	width: 768px;
+	max-width: 768px;
+	padding: 18px;
 	margin: 0 auto;
 }
 
