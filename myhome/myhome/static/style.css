@@ -35,6 +35,14 @@ p {
 	font-size: 28px;
 }
 
-.blog-post h3 {
+.blog-post h2 {
 	font-size: 48px;
+}
+
+.blog-post p {
+	margin: 14px 0;
+}
+
+.blog-post-content code {
+	font-size: 18px;
 }
