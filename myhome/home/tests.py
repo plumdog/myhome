@@ -1,3 +1,6 @@
-from django.test import TestCase
+from test_base import MyHomeTest
 
-# Create your tests here.
+
+class HomeTest(MyHomeTest):
+    def test_index_page(self):
+        self._test_get('/', ins=['Andrew Plummer'])
