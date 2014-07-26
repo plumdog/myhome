@@ -15,10 +15,10 @@
 </head>
 
 <body>
+  <span class="checkbox">Auto Width? <input type="checkbox" name="fixed-width-toggle" id="fixed-width-toggle" /></span>
   <div class="navbar" id="top-navbar">
     <a href="{% url 'home:index' %}">Home</a>
 	<a href="{% url 'blog:index' %}">Blog</a>
-	<span class="checkbox">Auto Width? <input type="checkbox" name="fixed-width-toggle" id="fixed-width-toggle" /></span>
   </div>
   <div class="container" id="content-container">
     {% block content %}{% endblock %}

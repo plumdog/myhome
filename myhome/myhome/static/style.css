@@ -18,7 +18,8 @@ body {
 	padding: 10px 10px 0;
 }
 
-.navbar span.checkbox {
+span.checkbox {
+	margin: 10px;
 	float: right;
 	color: #aaa;
 }
