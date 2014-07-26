@@ -90,3 +90,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myhome', 'static'),)
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'myhome', 'templates'),)
+
+# markdown-deux
+MARKDOWN_DEUX_STYLES = {
+    'default': {
+        'extras': {
+            'code-friendly': None,
+            'fenced-code-blocks': None,
+        }
+    }
+}
