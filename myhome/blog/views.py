@@ -19,6 +19,6 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 def post(request, post_id):
-    blog_post = get_object_or_404(BlogPost, pk=post_id)
+    blog_post = get_object_or_404(BlogPost, pk=post_id, live=True)
     context = {'bp': blog_post}
     return render(request, 'blog/blog_post.html', context)
