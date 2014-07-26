@@ -14,11 +14,13 @@ def index(request):
         tag = None
         blog_posts = BlogPost.objects
 
+
+
     blog_posts = blog_posts.filter(live=True).order_by('-datetime')
     context = {'blog_posts': blog_posts, 'tag': tag}
     return render(request, 'blog/index.html', context)
 
 def post(request, post_id):
     blog_post = get_object_or_404(BlogPost, pk=post_id, live=True)
-    context = {'bp': blog_post}
+    context = {'bp': blog_post, 'prev': blog_post.prev_post(), 'next': blog_post.next_post()}
     return render(request, 'blog/blog_post.html', context)

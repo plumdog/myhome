@@ -67,6 +67,23 @@ p {
 	margin: 0 10px;
 }
 
+.blog-post .next-and-prev {
+	font-size: 18px;
+	height: 20px;
+}
+
+.blog-post .next {
+	float: right;
+}
+
+.blog-post .prev {
+	float: left;
+}
+
+.blog-post .next, .blog-post .prev {
+	max-width: 45%;
+}
+
 .blog-post h2 {
 	font-size: 48px;
 	margin: 24px 0;
