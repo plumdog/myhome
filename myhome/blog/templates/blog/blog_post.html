@@ -21,11 +21,13 @@
     {% endif %}
   {% endif %}
 
-  <h2>{{ bp.title }}</h2>
-  {% if bp.subtitle %}
-    <p>~~ or ~~</p>
-    <h3>{{ bp.subtitle }}</h3>
-  {% endif %}
+  <div class="titles">
+    <h2>{{ bp.title }}</h2>
+    {% if bp.subtitle %}
+      <p class="or">~~ or ~~</p>
+      <h3 class="subtitle">{{ bp.subtitle }}</h3>
+    {% endif %}
+  </div>
 
   {% if bp.blog_post_tags.all %}
     <p>
