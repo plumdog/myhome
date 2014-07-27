@@ -69,11 +69,12 @@ p {
 
 .blog-post .next-and-prev {
 	font-size: 18px;
-	height: 20px;
+	height: 28px;
 }
 
 .blog-post .next {
 	float: right;
+	text-align: right;
 }
 
 .blog-post .prev {

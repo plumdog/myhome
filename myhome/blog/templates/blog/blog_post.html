@@ -5,7 +5,6 @@
 {% block content %}
 
 <div class="blog-post">
-  <h2>{{ bp.title }}</h2>
 
   {% if prev or next %}
     <p class="next-and-prev">
@@ -22,6 +21,7 @@
     {% endif %}
   {% endif %}
 
+  <h2>{{ bp.title }}</h2>
   {% if bp.subtitle %}
     <p>~~ or ~~</p>
     <h3>{{ bp.subtitle }}</h3>
