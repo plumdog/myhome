@@ -16,7 +16,7 @@ def index(request):
 
 
 
-    blog_posts = blog_posts.filter(live=True).order_by('-datetime')
+    blog_posts = blog_posts.filter(live=True)
     context = {'blog_posts': blog_posts, 'tag': tag}
     return render(request, 'blog/index.html', context)
 

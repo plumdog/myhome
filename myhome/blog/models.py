@@ -15,6 +15,9 @@ class BlogPost(models.Model):
 
     blog_post_tags = models.ManyToManyField(BlogPostTag, blank=True)
 
+    class Meta:
+        ordering = ['-datetime']
+
     def __str__(self):
         return '%s (%s)' % (self.title, self.datetime)
 
