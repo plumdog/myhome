@@ -22,6 +22,11 @@
     {% endif %}
   {% endif %}
 
+  {% if bp.subtitle %}
+    <p>~~ or ~~</p>
+    <h3>{{ bp.subtitle }}</h3>
+  {% endif %}
+
   {% if bp.blog_post_tags.all %}
     <p>
       <span class="tags">Tags:

@@ -13,6 +13,7 @@ class BlogPostTag(models.Model):
 class BlogPost(models.Model):
     datetime = models.DateTimeField()
     title = models.CharField(max_length=255)
+    subtitle = models.CharField(max_length=255, null=True)
     content = models.TextField()
     live = models.BooleanField(default=False)
 
