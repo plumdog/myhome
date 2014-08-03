@@ -19,42 +19,4 @@
     <h3>Things I Use Regularly <span>and by implication, am not quite as keen on, but this can vary day-by-day</span></h3>
     <p>PHP, MySQL, CSS, JavaScript</p>
   </div>
-
-  <h2>My Projects</h2>
-  <div class="about-me projects">
-	<p><a href="https://github.com/plumdog/flask_table" class="project">Flask-Table</a>: so
-	  that you don't have to write HTML. Includes formatting of
-	  different datatypes, allows links and buttons in a cell, and
-	  allows headers to be links to sort the data.
-	</p>
-
-	<p><a href="https://github.com/plumdog/myhome" class="project">MyHome</a>: the
-	  source of this website. It's written using Django, and you're
-	  welcome to rip it off and do what you want with it, but its
-	  pretty simple, so you'd be better doing it yourself and learning
-	  about Django.
-	</p>
-
-	<p><a href="https://github.com/plumdog/pysql_browser" class="project">Pysql
-	  Browser</a>: my attempt at writing a GUI MySQL browser in Python
-	  and Qt. Still a work in progress, but well worth a look if you
-	  don't like MySQL Workbench. It supports connection over an SSH
-	  tunnel and syntax-highlights your MySQL.
-	</p>
-
-	<p><a href="https://github.com/plumdog/project_euler" class="project">Project
-	  Euler</a>: my Project Euler solutions
-	  (<a href="https://projecteuler.net">link</a>).
-	  {% if project_euler_count %}
-	    Current solved count is at {{ project_euler_count }}.
-	  {% endif %}
-
-	  I know that Project Euler tells you not to publish your
-	  solutions, but if you want to look up the answers and ruin all
-	  the fun for yourself, then you can. My solutions use a range of
-	  languages, but mostly Python and Java. There is a bit of C and
-	  C++ too, and one using just Bash, which I am particularly proud
-	  of.
-	</p>
-  </div>
 {% endblock %}
