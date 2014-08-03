@@ -23,7 +23,10 @@ class BlogPost(models.Model):
         ordering = ['-datetime']
 
     def __str__(self):
-        return '%s (%s)' % (self.title, self.datetime)
+        if self.live:
+            return self.title
+        else:
+            return self.title + ' - (not live)'
 
     def __repr__(self):
         return '<BlogPost id=%d, datetime=%s, title=%s>' % (self.id, self.datetime, self.title)
