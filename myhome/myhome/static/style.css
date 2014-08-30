@@ -59,8 +59,8 @@ p {
 	margin-right: 40px;
 }
 
-.blog-posts .tags {
-	float: right;
+.blog-posts .blog-post-tags {
+	text-align: right;
 }
 
 .blog-posts .tags a {
@@ -135,5 +135,9 @@ p {
     margin: 0;
 }
 .blog-posts .blog-post-listing {
-    padding: 18px
+    padding: 36px;
+    
+}
+.blog-posts .blog-post-listing {
+    border-bottom: 1px solid #ccc;
 }

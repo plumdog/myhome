@@ -11,10 +11,10 @@
   <div class="blog-posts">
     {% for bp in blog_posts %}
       <div class="blog-post-listing">
-        <p>
+        <p class="blog-post-title">
           <a href="{% url 'blog:post' bp.id %}">{{ bp.title }}</a>({{ bp.datetime }})
         </p>
-        <p>
+        <p class="blog-post-tags">
           {% if bp.blog_post_tags.all %}
             <span class="tags">Tags:
               {% for tag in bp.blog_post_tags.all %}
