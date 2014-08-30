@@ -8,6 +8,17 @@ body {
     color: #222;
     margin: 0;
 }
+a {
+    color: #ff2020;
+}
+a:visited {
+    color: #880000;
+}
+h1.myname {
+    text-decoration: underline;
+    -moz-text-decoration-color: #880000;
+    text-decoration-color: #880000;
+}
 .navbar a {
     margin: 5px 20px;
 }
