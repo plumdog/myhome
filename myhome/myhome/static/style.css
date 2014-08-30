@@ -131,3 +131,9 @@ p {
 .projects a.project {
 	font-weight: bold;
 }
+.blog-posts .blog-post-listing p {
+    margin: 0;
+}
+.blog-posts .blog-post-listing {
+    padding: 18px
+}

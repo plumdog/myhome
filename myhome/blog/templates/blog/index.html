@@ -1,7 +1,6 @@
 {% extends 'blog/blog_base.html' %}
 
 {% block content %}
-
 <h1>Blog</h1>
 
 {% if tag %}
@@ -11,16 +10,20 @@
 {% if blog_posts %}
   <div class="blog-posts">
     {% for bp in blog_posts %}
-      <p>
-		<a href="{% url 'blog:post' bp.id %}">{{ bp.title }}</a>({{ bp.datetime }})
-		{% if bp.blog_post_tags.all %}
-		  <span class="tags">Tags:
-          {% for tag in bp.blog_post_tags.all %}
-            <a href="{% url 'blog:index' %}?tag={{ tag.id }}">{{ tag.name }}</a>
-          {% endfor %}
-	      </span>
-		{% endif %}
-	  </p>
+      <div class="blog-post-listing">
+        <p>
+          <a href="{% url 'blog:post' bp.id %}">{{ bp.title }}</a>({{ bp.datetime }})
+        </p>
+        <p>
+          {% if bp.blog_post_tags.all %}
+            <span class="tags">Tags:
+              {% for tag in bp.blog_post_tags.all %}
+                <a href="{% url 'blog:index' %}?tag={{ tag.id }}">{{ tag.name }}</a>
+              {% endfor %}
+            </span>
+          {% endif %}
+        </p>
+      </div>
     {% endfor %}
   </div>
 {% else %}
