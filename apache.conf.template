@@ -6,6 +6,7 @@
 	WSGIScriptAlias / [[rootdir]]/myhome/myhome/wsgi.py
 
 	Alias /static [[rootdir]]/myhome/static
+	Alias /robots.txt [[rootdir]]/myhome/robots.txt
 
     <Directory [[rootdir]] >
         WSGIProcessGroup myhome
