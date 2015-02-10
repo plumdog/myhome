@@ -55,5 +55,5 @@ docs/_build/
 
 db.sqlite3
 apache.conf
-myhome/static
-myhome/myhome/local_settings.py
+/static/
+myhome/local_settings.py
