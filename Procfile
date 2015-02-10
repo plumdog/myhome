@@ -1,1 +1,1 @@
-web: sh -c 'cd myhome && gunicorn myhome.wsgi --log-file -'
+web: gunicorn myhome.wsgi --log-file -
