@@ -1,5 +1,6 @@
 git+git://github.com/plumdog/django-markdown-deux
 Django==1.7.4
+dj-database-url==0.3.0
 Pygments==2.0.2
 gunicorn==19.2.1
 markdown2==2.2.1
