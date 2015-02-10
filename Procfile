@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi --log-file -
+web: sh -c 'cd myhome && gunicorn myhome.wsgi --log-file -'
