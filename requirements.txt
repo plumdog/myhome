@@ -1,4 +1,6 @@
 git+git://github.com/plumdog/django-markdown-deux
-git+git://github.com/django/django.git@stable/1.7.x
-requests
-pygments
+Django==1.7c1
+Pygments==2.0.2
+gunicorn==19.2.1
+markdown2==2.2.1
+requests==2.3.0
