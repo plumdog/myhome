@@ -4,9 +4,16 @@ from django.http import HttpResponse
 from .models import BlogPost, BlogPostTag
 
 def index(request):
-    tag_id = request.GET.get('tag')
+    tag = request.GET.get('tag')
     
-    if tag_id:
+    if tag:
+        try:
+            tag_id = int(tag)
+        except ValueError:
+            try:
+                tag_id = BlogPostTag.objects.get(name=tag).id
+            except BlogPostTag.DoesNotExist:
+                tag_id = None
         tag = get_object_or_404(BlogPostTag, pk=tag_id)
         blog_posts = BlogPost.objects.filter(blog_post_tags__id=tag_id)
         

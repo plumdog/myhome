@@ -20,7 +20,7 @@
 	    <br />
 	    <span class="blog-post-tags">Tags:
               {% for tag in bp.blog_post_tags.all %}
-                <a href="{% url 'blog:index' %}?tag={{ tag.id }}">{{ tag.name }}</a>
+                <a href="{% url 'blog:index' %}?tag={{ tag.name }}">{{ tag.name }}</a>
               {% endfor %}
             </span>
           {% endif %}
