@@ -11,18 +11,21 @@
   <div class="blog-posts">
     {% for bp in blog_posts %}
       <div class="blog-post-listing">
-        <p class="blog-post-title">
-          <a href="{% url 'blog:post' bp.id %}">{{ bp.title }}</a>({{ bp.datetime }})
-        </p>
-        <p class="blog-post-tags">
+        <span class="blog-post-title">
+          <a href="{% url 'blog:post' bp.id %}">{{ bp.title }}</a>
+	</span>
+	<span class="blog-post-info">
+	  ({{ bp.datetime }})
           {% if bp.blog_post_tags.all %}
-            <span class="tags">Tags:
+	    <br />
+	    <span class="blog-post-tags">Tags:
               {% for tag in bp.blog_post_tags.all %}
                 <a href="{% url 'blog:index' %}?tag={{ tag.id }}">{{ tag.name }}</a>
               {% endfor %}
             </span>
           {% endif %}
-        </p>
+        </span>
+	<div style="clear:both"></div>
       </div>
     {% endfor %}
   </div>

@@ -75,18 +75,16 @@ h1 {
 h2 {
     font-size: 48px;
 }
-p {
+p,  .blog-posts span {
     font-size: 28px;
     letter-spacing: 1.2px;
 }
-.blog-posts a {
-    margin-right: 40px;
+.blog-posts .blog-post-tags a {
+    margin: 0 5px;
 }
-.blog-posts .blog-post-tags {
+.blog-post-info {
+    float: right;
     text-align: right;
-}
-.blog-posts .tags a {
-    margin: 0 10px;
 }
 .blog-post .next-and-prev {
     font-size: 18px;
