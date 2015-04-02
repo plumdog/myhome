@@ -94,6 +94,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myhome', 'static'),)
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'myhome', 'templates'),)
 
+ASSET_TAG = hash(os.environ.get('GIT_COMMIT')) % 1000
+
 # markdown-deux
 MARKDOWN_DEUX_STYLES = {
     'default': {
