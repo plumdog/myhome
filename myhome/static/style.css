@@ -145,3 +145,16 @@ p,  .blog-posts span {
 .blog-posts .blog-post-listing {
     border-bottom: 1px solid #ccc;
 }
+code, .codehilite {
+    background-color: #e5e5e5;
+}
+code {
+    padding: 3px 5px;
+}
+.codehilite {
+    padding: 5px 10px;
+    overflow-x: scroll;
+}
+.codehilite pre {
+    line-height: 200%;
+}
