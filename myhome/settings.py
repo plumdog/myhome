@@ -26,7 +26,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'desolate-springs-9039.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'desolate-springs-9039.herokuapp.com', 'www.plumdog.co.uk']
 
 
 # Application definition
