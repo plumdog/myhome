@@ -1,5 +1,7 @@
 {% extends 'blog/blog_base.html' %}
 
+{% block title %}{{ block.super }} - {{ bp.title }}{% endblock %}
+
 {% load markdown_deux_tags %}
 
 {% block content %}
