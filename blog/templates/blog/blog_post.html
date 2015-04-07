@@ -2,6 +2,8 @@
 
 {% block title %}{{ block.super }} - {{ bp.title }}{% endblock %}
 
+{% block description %}{{ block.super }} - {{ bp.title }}{% if bp.subtitle %} (or {{ bp.subtitle }}){% endif %}{% endblock %}
+
 {% load markdown_deux_tags %}
 
 {% block content %}
