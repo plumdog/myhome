@@ -2,6 +2,8 @@
 
 {% block title %} - Blog{% if tag %} - {{ tag.name }}{% endif %}{% endblock %}
 
+{% block description %}{{ block.super }}, about Python and Django{% if tag %} - {{ tag.name }}{% endif %}{% endblock %}
+
 {% block content %}
     <h1>Blog</h1>
 
