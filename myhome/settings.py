@@ -39,6 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+
     'markdown_deux',
 
     'blog',
@@ -57,6 +60,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'myhome.urls'
 
 WSGI_APPLICATION = 'myhome.wsgi.application'
+
+SITE_ID = 1
 
 
 if DYNO:

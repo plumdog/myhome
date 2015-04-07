@@ -11,6 +11,17 @@ urlpatterns = patterns('',
     url(r'^', include('home.urls', namespace='home')),
 )
 
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import BlogPostSitemap, BlogPostTagSitemap, HomeSitemap
+sitemaps = {
+    'blog_posts': BlogPostSitemap,
+    'blog_tags': BlogPostTagSitemap,
+    'home': HomeSitemap}
+urlpatterns += patterns(
+    '',
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'))
+
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 if settings.DEBUG == True:
