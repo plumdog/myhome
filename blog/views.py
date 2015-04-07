@@ -1,4 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from urllib.parse import urlencode
+
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 
 from .models import BlogPost, BlogPostTag
@@ -10,12 +13,12 @@ def index(request):
         try:
             tag_id = int(tag)
         except ValueError:
-            try:
-                tag_id = BlogPostTag.objects.get(name=tag).id
-            except BlogPostTag.DoesNotExist:
-                tag_id = None
-        tag = get_object_or_404(BlogPostTag, pk=tag_id)
-        blog_posts = BlogPost.objects.filter(blog_post_tags__id=tag_id)
+            tag = get_object_or_404(BlogPostTag, name=tag)
+        else:
+            tag = get_object_or_404(BlogPostTag, pk=tag)
+            return redirect(reverse('blog:index') + '?' + urlencode({'tag': tag.name}))
+
+        blog_posts = BlogPost.objects.filter(blog_post_tags__id=tag.id)
         
     else:
         tag = None
