@@ -1,5 +1,7 @@
 {% extends 'blog/blog_base.html' %}
 
+{% block title %} - Blog{% if tag %} - {{ tag.name }}{% endif %}{% endblock %}
+
 {% block content %}
     <h1>Blog</h1>
 
