@@ -1,55 +1,53 @@
 {% extends 'base.html' %}
 
-{% block title %}
- - Projects
-{% endblock %}
+{% block title %} - Projects{% endblock %}
 
 {% block content %}
-  <h1>My Projects</h1>
+    <h1>My Projects</h1>
 
-  <div class="about-me projects">
+    <div class="about-me projects">
 	<p><a href="https://github.com/plumdog/flask_table" class="project">Flask-Table</a>: so
-	  that you don't have to write HTML. Includes formatting of
-	  different datatypes, allows links and buttons in a cell, and
-	  allows headers to be links to sort the data.
+	    that you don't have to write HTML. Includes formatting of
+	    different datatypes, allows links and buttons in a cell, and
+	    allows headers to be links to sort the data.
 	</p>
 
 	<p><a href="https://github.com/plumdog/myhome" class="project">MyHome</a>: the
-	  source of this website. It's written using Django, and you're
-	  welcome to rip it off and do what you want with it, but its
-	  pretty simple, so you'd be better doing it yourself and learning
-	  about Django.
+	    source of this website. It's written using Django, and you're
+	    welcome to rip it off and do what you want with it, but its
+	    pretty simple, so you'd be better doing it yourself and learning
+	    about Django.
 	</p>
 
 	<p><a href="https://github.com/plumdog/pysql_browser" class="project">Pysql
-	  Browser</a>: my attempt at writing a GUI MySQL browser in Python
-	  and Qt. Still a work in progress, but well worth a look if you
-	  don't like MySQL Workbench. It supports connection over an SSH
-	  tunnel and syntax-highlights your MySQL.
+	    Browser</a>: my attempt at writing a GUI MySQL browser in Python
+	    and Qt. Still a work in progress, but well worth a look if you
+	    don't like MySQL Workbench. It supports connection over an SSH
+	    tunnel and syntax-highlights your MySQL.
 	</p>
 
 	<p><a href="https://github.com/plumdog/project_euler" class="project">Project
-	  Euler</a>: my Project Euler solutions
-	  (<a href="https://projecteuler.net">link</a>).
-	  {% if project_euler_count %}
-	    Current solved count is at {{ project_euler_count }}.
-	  {% endif %}
+	    Euler</a>: my Project Euler solutions
+	    (<a href="https://projecteuler.net">link</a>).
+	    {% if project_euler_count %}
+		Current solved count is at {{ project_euler_count }}.
+	    {% endif %}
 
-	  I know that Project Euler tells you not to publish your
-	  solutions, but if you want to look up the answers and ruin
-	  all the fun for yourself, then you can. My solutions use a
-	  range of languages, but mostly Python and Java. There is a
-	  bit of C too, and one using just Bash, which I am
-	  particularly proud of, thought probably shouldn't be.
+	    I know that Project Euler tells you not to publish your
+	    solutions, but if you want to look up the answers and ruin
+	    all the fun for yourself, then you can. My solutions use a
+	    range of languages, but mostly Python and Java. There is a
+	    bit of C too, and one using just Bash, which I am
+	    particularly proud of, thought probably shouldn't be.
 	</p>
 
 	<p><a href="https://github.com/plumdog/django-mainstay"
-	    class="project"> Django Mainstay</a>: a component-based
+	      class="project"> Django Mainstay</a>: a component-based
 	    Django application, with a few components to go with. Very
 	    much a work in progress. My intention was to aim for
 	    something similar
 	    to <a href="http://owncloud.org/">ownCloud</a> but written
 	    with Django.
 	</p>
-  </div>
+    </div>
 {% endblock %}

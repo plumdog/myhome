@@ -1,35 +1,35 @@
 {% extends 'blog/blog_base.html' %}
 
 {% block content %}
-<h1>Blog</h1>
+    <h1>Blog</h1>
 
-{% if tag %}
-<p>Matching tag: &quot;{{ tag.name }}&quot;</p>
-{% endif %}
+    {% if tag %}
+	<p>Matching tag: &quot;{{ tag.name }}&quot;</p>
+    {% endif %}
 
-{% if blog_posts %}
-  <div class="blog-posts">
-    {% for bp in blog_posts %}
-      <div class="blog-post-listing">
-        <span class="blog-post-title">
-          <a href="{% url 'blog:post' bp.id %}">{{ bp.title }}</a>
-	</span>
-	<span class="blog-post-info">
-	  ({{ bp.datetime }})
-          {% if bp.blog_post_tags.all %}
-	    <br />
-	    <span class="blog-post-tags">Tags:
-              {% for tag in bp.blog_post_tags.all %}
-                <a href="{% url 'blog:index' %}?tag={{ tag.name }}">{{ tag.name }}</a>
-              {% endfor %}
-            </span>
-          {% endif %}
-        </span>
-	<div style="clear:both"></div>
-      </div>
-    {% endfor %}
-  </div>
-{% else %}
-  <p>No Items</p>
-{% endif %}
+    {% if blog_posts %}
+	<div class="blog-posts">
+	    {% for bp in blog_posts %}
+		<div class="blog-post-listing">
+		    <span class="blog-post-title">
+			<a href="{% url 'blog:post' bp.id %}">{{ bp.title }}</a>
+		    </span>
+		    <span class="blog-post-info">
+			({{ bp.datetime }})
+			{% if bp.blog_post_tags.all %}
+			    <br />
+			    <span class="blog-post-tags">Tags:
+				{% for tag in bp.blog_post_tags.all %}
+				    <a href="{% url 'blog:index' %}?tag={{ tag.name }}">{{ tag.name }}</a>
+				{% endfor %}
+			    </span>
+			{% endif %}
+		    </span>
+		    <div style="clear:both"></div>
+		</div>
+	    {% endfor %}
+	</div>
+    {% else %}
+	<p>No Items</p>
+    {% endif %}
 {% endblock %}

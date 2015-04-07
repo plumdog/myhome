@@ -4,41 +4,41 @@
 
 {% block content %}
 
-<div class="blog-post">
+    <div class="blog-post">
 
-  {% if prev or next %}
-    <p class="next-and-prev">
-    {% if prev %}
-      <span class="prev">
-		Prev: <a href="{% url 'blog:post' prev.id %}">{{ prev.title }}</a>
-      </span>
-    {% endif %}
+	{% if prev or next %}
+	    <p class="next-and-prev">
+		{% if prev %}
+		    <span class="prev">
+			Prev: <a href="{% url 'blog:post' prev.id %}">{{ prev.title }}</a>
+		    </span>
+		{% endif %}
 
-    {% if next %}
-      <span class="next">
-		Next: <a href="{% url 'blog:post' next.id %}">{{ next.title }}</a>
-      </span>
-    {% endif %}
-  {% endif %}
+		{% if next %}
+		    <span class="next">
+			Next: <a href="{% url 'blog:post' next.id %}">{{ next.title }}</a>
+		    </span>
+		{% endif %}
+	{% endif %}
 
-  <div class="titles">
-    <h2>{{ bp.title }}</h2>
-    {% if bp.subtitle %}
-      <p class="or">~~ or ~~</p>
-      <h3 class="subtitle">{{ bp.subtitle }}</h3>
-    {% endif %}
-  </div>
+	<div class="titles">
+	    <h2>{{ bp.title }}</h2>
+	    {% if bp.subtitle %}
+		<p class="or">~~ or ~~</p>
+		<h3 class="subtitle">{{ bp.subtitle }}</h3>
+	    {% endif %}
+	</div>
 
-  {% if bp.blog_post_tags.all %}
-    <p>
-      <span class="tags">Tags:
-        {% for tag in bp.blog_post_tags.all %}
-          <a href="{% url 'blog:index' %}?tag={{ tag.name }}">{{ tag.name }}</a>
-        {% endfor %}
-      </span>
-    </p>
-  {% endif %}
-  <div class="blog-post-content">{{ bp.content|markdown }}</div>
-</div>
+	{% if bp.blog_post_tags.all %}
+	    <p>
+		<span class="tags">Tags:
+		    {% for tag in bp.blog_post_tags.all %}
+			<a href="{% url 'blog:index' %}?tag={{ tag.name }}">{{ tag.name }}</a>
+		    {% endfor %}
+		</span>
+	    </p>
+	{% endif %}
+	<div class="blog-post-content">{{ bp.content|markdown }}</div>
+    </div>
 
 {% endblock %}
