@@ -22,7 +22,8 @@ DYNO = bool(os.environ.get('DYNO'))
 SECRET_KEY = 'secretkey'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', ''))
+# By default, run in DEBUG iff not on a DYNO
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', not DYNO))
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['127.0.0.1', 'desolate-springs-9039.herokuapp.com', 'www.plumdog.co.uk']
