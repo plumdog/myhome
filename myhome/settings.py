@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
 
     'markdown_deux',
+    'robots',
 
     'blog',
     'home'
