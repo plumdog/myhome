@@ -86,7 +86,7 @@ def get_post(content):
 
     title = ' '.join(title_lines)
     subtitle = ' '.join(subtitle_lines)
-    tags = [t.strip() for t in ','.join(tags_lines).split(',')]
+    tags = [t.strip() for t in ','.join(tags_lines).split(',') if t.strip()]
     datetime = parse_datetime(' '.join(datetime_lines))
     content = '\n'.join(content_lines)
 
