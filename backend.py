@@ -59,12 +59,12 @@ class Parser(object):
     DATETIME_KEY = 'datetime'
     CONTENT_KEY = 'content'
 
-    sections = {
-        TITLE_KEY: TITLE,
-        SUBTITLE_KEY: SUBTITLE,
-        TAGS_KEY: TAGS,
-        DATETIME_KEY: DATETIME,
-        CONTENT_KEY: CONTENT,
+    SECTIONS = {
+        TITLE: TITLE_KEY,
+        SUBTITLE: SUBTITLE_KEY,
+        TAGS: TAGS_KEY,
+        DATETIME: DATETIME_KEY,
+        CONTENT: CONTENT_KEY,
     }
 
     MULTILINE_SECTIONS = [
@@ -91,7 +91,7 @@ class Parser(object):
             if self.current_section not in self.MULTILINE_SECTIONS:
                 self.current_section = None
 
-            for section in self.sections.values():
+            for section in self.SECTIONS:
                 if line.startswith(section):
                     self.current_section = section
                     line = line[len(section):].strip()
@@ -102,8 +102,7 @@ class Parser(object):
         
 
     def _get_output(self, section):
-        mapping = {v: k for k, v in self.sections.items()}
-        section_key = mapping[section]
+        section_key = self.SECTIONS[section]
         return self.output[section_key]
 
     def _append_line_to_current_section(self, line):
