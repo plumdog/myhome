@@ -1,10 +1,13 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd "$DIR"
+
 message="$(git log -1 --pretty=%B)"
 message="$(echo -e $message)"
 
 rm -rf _html
-
 python main.py
 
 cd _html
