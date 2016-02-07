@@ -1,0 +1,49 @@
+Title: Pythonic Elegance
+
+Subtitle: How cdecimal saved the day
+
+Tags: Coding Concepts, Django, Python
+
+Datetime: 2015-04-07 18:30:03+00:00
+
+Live: True
+
+Content:
+
+Python's decimal module handles fixed-point arithmetic calculations,
+and before Python 3.3, was implemented in pure Python. The fact that
+there is a reference implementation written in Python is
+excellent. Its portable, it means the source is readable for Python
+people, and it simplifies the tracebacks.
+
+But it's also slow. And this was a problem. I project I was working on
+recently involved a lot of calculations with Decimal objects, and
+profiling showed that a huge chunk of time was going on the `__mul__`
+method of Decimal, so I wanted to use `cdecimal.Decimal` instead of
+`decimal.Decimal`. But lots of the values came from the database, and
+where stored in Django in DecimalFields, which return standard
+Decimals, and the two types of Decimals are not interoperable. How
+could I make it so that the DecimalFields gave the cdecimal versions,
+not the standard ones?
+
+Turns out that because they are drop-in replacements, you can update
+`sys.modules`:
+
+```python
+import sys
+import cdecimal
+
+sys.modules['decimal'] = cdecimal
+```
+
+So I just needed to put this segment at the top of `manage.py`(for the
+devserver and shell commands) and `wsgi.py` (for the WSGI server). And
+then my view function that was taking more than 30 seconds -- and
+dying horribly against Heroku's hard 30 second limit -- was now taking
+less than five seconds.
+
+There were two things that really impressed me about this. Firstly,
+that cdecimal was so much faster. As of CPython 3.3, it is now the
+default implementation (and, I read, has had even more performance
+improvements). Secondly, how well Python accommodates module-level
+drop in replacements. Guido's time machine strikes again.

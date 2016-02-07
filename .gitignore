@@ -53,7 +53,5 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-db.sqlite3
-apache.conf
-/static/
-myhome/local_settings.py
+_html/
+posts/wip

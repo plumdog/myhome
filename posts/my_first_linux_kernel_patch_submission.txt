@@ -1,0 +1,43 @@
+Title: My First Linux Kernel Patch Submission
+
+Subtitle: Fiddling with documentation is easy
+
+Tags: Learning, Linux
+
+Datetime: 2014-08-30 12:29:20+00:00
+
+Live: True
+
+Content:
+
+So, I don't really know much more than the basics of C -- though I
+rather hope that will soon change -- but since having my first
+pull-request on GitHub accepted back in May, contributing to the Linux
+Kernel seemed like a reasonable next step.
+
+The Linux Kernel is an enormous body of code. Somewhere in the region
+15 million lines of C and Assembly. Development is not driven by any
+one company, and not even really by one organisation. The [Linux
+Foundation](http://www.linuxfoundation.org/) describes itself as
+
+> a non-profit consortium dedicated to fostering the growth of Linux
+
+It doesn't steer development, and to quote Linus
+
+> Linux is evolution, not intelligent design
+
+Its just a lot of developers submitting code to other developers, and
+so on, until it reaches Linus at the top of the tree, and that's how
+the Kernel happens. There are a lot of companies that do employ people
+full-time to contribute, but anyone can if they are so inclined.
+
+And I am. My first patch is just to tweak the format of some
+documentation comments in the code to conform with the comment
+style. Honestly, I don't even know what the file is for. I know its
+for a driver, but no idea what that driver is for. But I don't need
+to. The Kernel is updated often in tiny, easy to verify alterations,
+and that's what I can (try to) provide.
+
+My change is [here in all its glory](https://lkml.org/lkml/2014/8/29/477).
+
+Let's hope there are more in the future.

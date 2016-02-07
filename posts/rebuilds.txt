@@ -1,0 +1,41 @@
+Title: Rebuilds
+
+Subtitle: Evaluating the baby and the bathwater
+
+Tags: Coding Concepts
+
+Datetime: 2014-08-16 15:11:15+00:00
+
+Live: True
+
+Content:
+
+To rebuild a large system is an awful lot of work. In my view, either
+a rebuild or more likely just a lot of "housework" should be scheduled
+in every year or so. If nothing else, staring down the barrel of
+starting everything over crystallises several things, like evaluating
+which sections will take longest, which utilities are particularly
+valuable and what tools and features are on offer elsewhere, but you
+don't currently have. In most cases, I think a rebuild is a mistake,
+but evaluating one definitely isn't. With reasonable likelihood, you
+should be able to add the new features yourself and spend half the
+amount of time having a cleanup as you would rebuilding.
+
+More tangibly: we use a venerable (read "old") web framework. It has
+warts and things I dislike and we have written plenty of ugly code on
+top of it. But there's so much good stuff too. We understand its ways,
+and -- with a little force and a little swearing -- we can make it
+understand us. There's plenty I would like to change about it. But I
+think, at least in this case, I would rather make those changes that
+start over.
+
+However a side project I have *does* need a rebuild. (Flat PHP,
+anyone?) Why a rebuild? Because it has no direction, no personality,
+nothing that would be missed. Every moment I stare at its code, I feel
+my braincells evaporating. Also, its not very big.
+
+I think I subscribe more to the idea of continual and vicious
+evolution of a codebase. Replacing your ORM or templating system might
+be a lot of work, but it keeps you focussed and
+driven. Philosophically, I see giving the code two new heads and three
+new handles to be both very practical and pleasingly cathartic.

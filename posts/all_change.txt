@@ -1,0 +1,22 @@
+Title: All Change
+
+Subtitle: Achieving an achievable goal
+
+Tags: Django, Heroku
+
+Datetime: 2015-03-17 22:50:04+00:00
+
+Live: True
+
+Content:
+
+I recently made [All Change](https://allchange.herokuapp.com/) which
+is for checking your train times when changing trains.
+
+This is to scratch a personal itch about trying to decide which train
+you are likely to connect with.
+
+But most importantly, its a small, achievable project. It's only taken
+2 days from first creating the repo to deploying to Heroku. This is in
+stark contrast to my usual tendancy to attempt large open-ended
+projects. So well done me for actually doing a thing.

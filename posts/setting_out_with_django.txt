@@ -1,0 +1,25 @@
+Title: Setting Out with Django
+
+Subtitle:
+
+Tags: Django, Python
+
+Datetime: 2014-07-13 17:04:02+00:00
+
+Live: True
+
+Content:
+
+This is my first Django project that has gone as far as an actual
+server. Apart from the usual Apache based issues, it has been a
+breeze.
+
+Django has a much stronger idea of "the right way to do it" than
+Flask, which is a blessing and a curse. It is my belief that Web
+Development and the use of MVC frameworks can suffer from the curse of
+the instrument: "if all you have is a hammer, everything looks like a
+nail". But, to extend this metaphor, there are certainly an awful lot
+of nails and Django looks like a very good hammer.
+
+I should probably start by tidying up this site. I hear that CSS and
+things are important, so I might actually bother to do some of that.

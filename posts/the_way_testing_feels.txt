@@ -1,0 +1,43 @@
+Title: The Way Testing Feels
+
+Subtitle: Putting on Your Dev Armour
+
+Tags: Coding Concepts
+
+Datetime: 2014-08-01 21:15:02+00:00
+
+Live: True
+
+Content:
+
+A world where all code was written and the frozen, and all extra
+features were just built entirely 'above' that code would mean that
+all you needed to do was manually test the code you added, confirm it
+works in each path of logic and be really very sure that it was
+correct. However, this world is a) not a pleasant dev world and b) not
+a realistic one. Code always needs to be altered, extended or
+improved. That's a given.
+
+Let's suppose its you that's changing something existing. You change
+something. Did you break all the other stuff that relied on that?
+Probably. Tests are the only remedy. Change some code, improve an
+algorithm in the backend, adjust the way a process happens in a
+frontend, rewrite a database query to be more efficient. If you have
+tests you're safe, and you *feel* safe. Boss tells you a client is
+trying out that code, you feel confident, there's no fear of the
+unknown things you never considered. Look at your spec, look at your
+tests -- they should be fairly easy to match up. System needs to be
+able to do something? Ok, lets write the test for that. Even if a bug
+does get reported, write a test that fails, code the fix until the
+test passes, ship it. Then just be confident. Your tests give you the
+armour of confidence.
+
+I thought of the analogy of armour based on my -- sadly ongoing --
+dual life doing dev as well as support. In a support role, your armour
+comes from confidence in your knowledge of what you will be asked
+questions about, or what to do even if you don't know. Your course is
+clear and you have your armour of knowledge. Shipping code that isn't
+tested feels a lot like answering the phone to someone who you know is
+going to ask you something you don't know anything about and you don't
+know where to turn. Don't be so foolhardy as to go without such a
+vital comfort, for the sake of, if nothing else, sanity.

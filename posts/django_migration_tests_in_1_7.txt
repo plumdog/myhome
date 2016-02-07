@@ -1,0 +1,73 @@
+Title: Django Migration Tests in 1.7
+
+Subtitle: Test all the things, especially the ones that make big changes to your database
+
+Tags: Django, Python
+
+Datetime: 2015-03-29 20:02:34+00:00
+
+Live: True
+
+Content:
+
+A while ago, I wrote my first Django migration that actually mattered,
+and was a data migration rather than a nice, simple, auto generated
+one for adding columns. I am of the view that migrations are
+scary. Especially data migrations, where you're shuffling data around
+in your tables. If you're scared about something being wrong, then
+right a test; and so I found
+[this](https://micknelson.wordpress.com/2013/03/01/testing-django-migrations/).
+
+The post describes a TestCase subclass that sets the database to a
+starting migration state, lets you add some data, run the migrations
+through to a new state, then assert things about how the data now
+looks. This seems like an excellent way to gain some confidence that
+your migrations mutates your data in the correct way. However, the
+linked article assumes South migrations are being used, so is no help
+for Django>=1.7, which is why I wrote
+[django_migration_test](https://github.com/plumdog/django_migration_test),
+which aims to work with Django's new migrations framework.
+
+I'm keen to find out if it actually works in various edge cases and
+database engines. I also want to know if this is actually a solved
+problem, or if this is not the best way of testing in this case. It's
+[on PyPI](https://pypi.python.org/pypi/django-migration-test/), and
+you can install it with
+
+`pip install django-migration-test`
+
+and then write a test that looks a bit like:
+
+```python
+from django_migration_test import MigrationTest
+
+
+class MyMigrationTest(MigrationTest):
+
+    # At present, we can only run migrations for one app at a time.
+    app_name = 'my_app'
+    # At present, these need to be full names of migrations, not just
+    # prefixes.
+    before = '0001_initial'
+    after = '0002_change_fields'
+
+    # Can have any name, is just a test method. MigrationTest
+    # subclasses django.test.TestCase
+    def test_migration(self):
+        # Load some data. Don't directly import models. At this point,
+        # the database is at self.before, and the models have fields
+        # set accordingly.
+
+        MyModel = self.get_model_before('MyModel')
+
+        # ... save some models
+
+        # Trigger the migration
+        self.run_migration()
+
+        # Now run some assertions based on what the data should now
+        # look like. The database will now be at self.after. To run
+        # queries via the models, reload the model.
+
+        MyModel = self.get_model_after('MyModel')
+```

@@ -1,0 +1,20 @@
+Title: First Steps with Heroku
+
+Subtitle: Sticking it in the Cloud
+
+Tags: Django, Heroku, Learning, Python
+
+Datetime: 2015-02-10 23:51:32+00:00
+
+Live: True
+
+Content:
+
+So I've now deployed this site to Heroku. It was all pretty easy. A
+few things to muddle through, and a few things that Heroku expects to
+be a certain way, but its all easy enough to sort out and fix up.
+
+I also managed to convert from Sqlite3 to Postgres. This was fairly
+easy once I fiddled with the SQL, turning some ones and zeroes into
+trues and falses, and removing the SQL that `manage.py migrate` will
+already have run.

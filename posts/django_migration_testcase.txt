@@ -1,0 +1,31 @@
+Title: Django Migration Testcase
+
+Subtitle: By myself, I'd make rubbish software
+
+Tags: Learning, Python
+
+Live: True
+
+Datetime: 2015-09-21 19:20:04+00:00
+
+Content:
+
+I recently released
+[django_migration_testcase](https://github.com/plumdog/django_migration_testcase). This
+isn't the first time that I've released a Python package - see
+[flask_table](https://github.com/plumdog/flask_table) - but it is the
+most complicated. And, specifically, complicated enough that it had
+several serious bugs when I first put it on GitHub.
+
+After opening up the code, and other people being able to poke about
+with it I fixed two things that were downright broken - including the
+installation from `pip` and PyPI just not working - and questions
+about how to use it. While the code bugs could have been found by me,
+the documentation and usability bugs would have virtually impossible
+for me to find. It's so hard to identify which parts of your project
+are unclear or easy to use incorrectly.
+
+For this reason, focusing on the hurdles to new users for your project
+is the best place to spend time, because the more you do it, the more
+it is done for you. And if you neglect it, you're pulling up the
+ladder stopping it from happening at all.

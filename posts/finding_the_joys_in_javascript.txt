@@ -1,0 +1,50 @@
+Title: Finding the Joys in JavaScript
+
+Subtitle: That time I tried to talk about Meta Structure
+
+Tags: Coding Concepts, JavaScript, Learning
+
+Datetime: 2015-03-31 19:47:06+00:00
+
+Live: True
+
+Content:
+
+I recently made a site that used JavaScript as it's primary means of
+loading new pages. The aim was to create a working mock up of a mobile
+app, so the round trip time of getting a new page was too slow, as
+this needed to emulate screen transitions of an app. So I needed a way
+of inserting new HTML, populated with data. For this I used
+[Handlebars](http://handlebarsjs.com), which offered a simple,
+straightforward, well-documented way of templating with JavaScript.
+
+This gave me a surprisingly positive experience with a JS project. I
+think this is because it did one job, which neatly covered what I
+needed it do to. Which was in stark contrast to the playing I had done
+with some other, more MVC-style JavaScript frameworks, which seemed so
+monolithic, and so bloated - though I should clarify that I have never
+been the whole-nine-yards with a JavaScript framework, just toy
+projects.
+
+Which got me thinking about why Handlebars felt easy, but Angular just
+felt stressful. I think this has to be because Handlebars worked in
+addition to my preexisting JS knowledge, it didn't jump in and try to
+make the simple things complicated.
+
+Which is similar to everyone's favourite JavaScript library: jQuery,
+which just gives you some useful extra things for your toolbelt, but
+doesn't get all up in your business.
+
+This is basically the Unix principle. Simple, easy to understand
+tools, that do one job. But I found myself thinking about it a little
+differently, because it's more about mixing at source code level,
+rather than combing tools. So I thought about it like the "favour
+composition over inheritance" idiom, but applied at a higher
+level. Something like Angular felt very nested, where the depth just
+made it hard to wrangle. Tools like Handlebars and jQuery sit nicely
+next to each other, and are nicely orthogonal.
+
+I would love for JavaScript to gain more of these simple tools, and
+let go off the focus on the revolving door of frameworks, of nothing
+else so that tools can actually stick around and not be a flash in the
+pan, that takes so long to learn, and teaches so little.

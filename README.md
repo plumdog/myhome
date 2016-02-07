@@ -1,4 +1,4 @@
 myhome
 ======
 
-My Home Page, written in Django
+My Home Page, written with Jinja2.

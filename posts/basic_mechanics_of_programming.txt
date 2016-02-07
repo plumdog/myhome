@@ -1,0 +1,47 @@
+Title: Basic Mechanics of Programming
+
+Subtitle: Practice makes Permanent
+
+Tags: Coding Concepts
+
+Datetime: 2014-07-26 17:49:31+00:00
+
+Live: True
+
+Content:
+
+Or: some observations after teaching some green devs.
+
+Pretty much regardless of where you are in your programming journey,
+you will be learning things -- I think that's much of the appeal --
+but I want to think here about the things that you're learning early
+on. I refer to these as "mechanics" because the aren't really what we
+think of as programming, they don't do anything cool and they don't
+add features. They're bookkeeping.
+
+* Indenting -- Its not there as some annoying chore. Its there to make
+  the logic of the code that you've written clear both to yourself
+  and to anyone else looking at your code. Hopefully you're using an
+  editor that can do this for you.
+
+* Naming -- This problem never really goes away, but make them clear,
+  make them consistent and make them more than one letter.
+
+* Planning -- This definitely never goes away, but start early. Where
+  maybe later on we spend more time making bigger, architecture style
+  planning decisions, early on spend your time writing down what
+  functions you will need to write. Work out what your common chunks
+  of logic that deserve their own function and work out what things
+  need to trigger which other things. Draw a diagram, a flow chart,
+  whatever helps.
+
+* Version Control -- Another thing that you should start using
+  early. This one is not super relevant to my idea of "mechanics", but
+  it will save you one day. Make sure you don't have a "if only I had
+  used git" story, but rather a "thank goodness I was using git, and
+  you should too" story.
+
+* Googling -- Got an error message? Awesome! That's the best thing a
+  computer can do to tell you exactly what to do. What its saying is
+  "fix this thing, if you don't know anything about it, then the
+  internet will". Search and search well.'

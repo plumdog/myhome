@@ -1,10 +1,8 @@
 {% extends 'blog/blog_base.html' %}
 
-{% block title %}{{ block.super }} - {{ bp.title }}{% endblock %}
+{% block title %}{{ super() }} - {{ bp.title }}{% endblock %}
 
-{% block description %}{{ block.super }} - {{ bp.title }}{% if bp.subtitle %} (or {{ bp.subtitle }}){% endif %}{% endblock %}
-
-{% load markdown_deux_tags %}
+{% block description %}{{ super() }} - {{ bp.title }}{% if bp.subtitle %} (or {{ bp.subtitle }}){% endif %}{% endblock %}
 
 {% block content %}
 
@@ -14,13 +12,13 @@
 	    <p class="next-and-prev">
 		{% if prev %}
 		    <span class="prev">
-			Prev: <a href="{% url 'blog:post' prev.id %}">{{ prev.title }}</a>
+			Prev: <a href="{{ prev|get_post_url }}">{{ prev.title }}</a>
 		    </span>
 		{% endif %}
 
 		{% if next %}
 		    <span class="next">
-			Next: <a href="{% url 'blog:post' next.id %}">{{ next.title }}</a>
+			Next: <a href="{{ next|get_post_url }}">{{ next.title }}</a>
 		    </span>
 		{% endif %}
 	{% endif %}
@@ -33,11 +31,11 @@
 	    {% endif %}
 	</div>
 
-	{% if bp.blog_post_tags.all %}
+	{% if bp.tags %}
 	    <p>
 		<span class="tags">Tags:
-		    {% for tag in bp.blog_post_tags.all %}
-			<a href="{% url 'blog:index' %}?tag={{ tag.name }}">{{ tag.name }}</a>
+		    {% for tag in bp.tags %}
+			<a href="{{ tag|get_tag_url }}">{{ tag }}</a>
 		    {% endfor %}
 		</span>
 	    </p>

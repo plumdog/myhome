@@ -1,0 +1,42 @@
+Title: Premature Complications
+
+Subtitle: Just Fucking Code
+
+Tags: Coding Concepts, Learning
+
+Datetime: 2015-04-03 20:45:04+00:00
+
+Live: True
+
+Content:
+
+This is not so much advice, or general observation -- more just an
+admission of a mistake I make repeatedly.
+
+I often find myself wanting to start something new, but in an area I
+don't know much about. For example: a game, a JavaScript library, a
+desktop application, anything in C. My bad habit is to get stuck down
+the rabbit hole of the packaging and non code things, when what I
+should be doing is getting enthused about actually building the
+thing. Just start writing the code, and get a proof of concept. Tackle
+the interesting problems, and the ones that will actual determine the
+success of my project.
+
+I think this lines up with my belief that progress through a project
+should be as breadth-first as possible. By which I really mean,
+totally *not* be depth first. (I'm feeling another post coming on
+about the nature of the tree of problems for a project.) Put simply, I
+mean to solve the problems as simply and idiomatically as possible and
+get them all done and functioning -- or just put them off if you can
+-- before pushing on to iron out the deeper wrinkles.
+
+My packaging problem is an example of this. Don't worry about
+distributing your Python game, or package.json files, or bundling GUI
+toolkits, or makefiles -- get something working, and trust that you'll
+have built it in such a way that if you need to swap something out or
+rewrite a chunk, then you'll be able to.
+
+Premature optimisation is also an example of this. Don't start solving
+problems until you know you need to solve them.
+
+So next time, just start coding.

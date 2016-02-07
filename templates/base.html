@@ -1,4 +1,3 @@
-{% load settings %}
 <!doctype html>
 <head>
     <meta charset="utf-8" />
@@ -10,10 +9,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}?_={% setting "ASSET_TAG" %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'pygmentsfriendly.css' %}?_={% setting "ASSET_TAG" %}" />
-    <script type="text/javascript" src="{% static 'app.js' %}?_={% setting "ASSET_TAG" %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/style.css?_={{ ASSET_TAG }}" />
+    <link rel="stylesheet" type="text/css" href="/static/pygmentsfriendly.css?_={{ ASSET_TAG }}" />
+    <script type="text/javascript" src="/static/app.js?_={{ ASSET_TAG }}"></script>
     <script type="text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -27,9 +26,9 @@
 <body>
     <span class="checkbox">Auto Width? <input type="checkbox" name="fixed-width-toggle" id="fixed-width-toggle" /></span>
     <div class="navbar" id="top-navbar">
-	<a href="{% url 'home:index' %}">Home</a>
-	<a href="{% url 'home:projects' %}">My Projects</a>
-	<a href="{% url 'blog:index' %}">Blog</a>
+	<a href="/">Home</a>
+	<a href="/projects/">My Projects</a>
+	<a href="/blog/">Blog</a>
     </div>
     <div class="container" id="content-container">
 	{% block content %}{% endblock %}

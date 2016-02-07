@@ -1,0 +1,55 @@
+Title: Selecting a PHP Web Framework
+
+Subtitle: Where did I Leave My Crystal Ball?
+
+Live: True
+
+Tags: PHP
+
+Datetime: 2014-07-25 22:03:11+00:00
+
+Content:
+
+Selecting a web framework can be a somewhat daunting task. Its not too
+bad if what you're building is a one-off, standalone application that
+isn't too big. Unless you need to do something very left-field, every
+half decent framework will do at least "fine" or better. There will be
+forms and databases and validation and html views. You know the drill.
+
+But what about a long term project that you and your colleages need to
+continually develop for until the end of time (or rather, when the
+next rebuild happens or when you're all out of a job)? Clearly it is
+foolhardy to jump on the bandwagon of the latest cool-kid in
+framework-town. Longevity now counts for a lot. You need not only to
+do the standard stuff and do it well, but you need to get a feel for
+how you will deal with problems that you haven't been presented with
+-- though plenty of motivating examples are very useful -- and someone
+will always ask for something weird.
+
+I think this raises some interesting points about making decisions
+more generally, specifically about technical requirements. It would be
+awesome if we could make this choice without having to fall back on
+instinct. I'm not saying that instinct is all you have -- you can
+quickly start to rule out non-contenders that are clearly well off the
+pace -- but unless you are (by some measure) very fortunate, several
+will look like a good bet, and the things that will differentiate them
+are only a long way down the line, and only the very lucky can give
+the options a full road test.
+
+And this is the position we are currently in: Symfony vs Zend vs
+Phalcon. Symfony wins at modularity and features, Zend wins at
+business support and Phalcon wins at performance. Which one will it
+turn out that we really do need most? Its not that we require at least
+"seven" performance and Symfony only has "five", how much is enough?
+Nor even which features are available -- we can always build a feature
+if it doesn't exist, but will the time lost be worth it versus the
+gains we made by eschewing the possibility of having it already
+
+In a domain where we feel so comfortable knowing that our decisions
+are often so strongly evidence-based, when making a decision that will
+impact on the next how-many-years of development, it feels so
+unnerving to let gut-feeling have any sway. Though there's comfort in
+the fact that, for our current quandary at least, every option would
+be a massive improvement.
+
+Except Zend.
