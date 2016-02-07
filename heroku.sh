@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function error {
+    echo "Error: $1"
+    exit 1
+}
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd "$DIR"
@@ -8,9 +13,9 @@ message="$(git log -1 --pretty=%B)"
 message="$(echo -e $message)"
 
 rm -rf _html
-python main.py
+python main.py || error "Unable to build html pages"
 
-cd _html
+cd _html || error "Unable to move int html directyr"
 
 touch composer.json
 touch index.php
