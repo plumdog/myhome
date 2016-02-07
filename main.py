@@ -4,7 +4,6 @@ import shutil
 # TODO: robots? Site maps? Don't forget css, fonts etc
 
 from jinja2 import Environment, FileSystemLoader
-from slugify import slugify
 from markdown import markdown as base_markdown
 
 # from .project_euler_count import count as pec_count
@@ -17,6 +16,7 @@ from backend import (
 )
 
 from settings import BASE_DIR, HTML_DIR, ASSET_TAG
+from urls import get_url, get_path
 
 
 def markdown(text):
@@ -28,27 +28,30 @@ def markdown(text):
 
 def get_all_pages():
     filters = {
-        'get_post_url': get_post_url,
-        'get_tag_url': get_tag_url,
         'markdown': markdown,
+    }
+
+    extra_globals = {
+        'get_url': get_url,
     }
 
     env = Environment(loader=FileSystemLoader('templates'))
 
     env.filters.update(filters)
+    env.globals.update(extra_globals)
 
     pages = {
-        '/index.html': render_template(env, 'home/index.html'),
-        '/projects/index.html': render_template(env, 'home/projects.html'),
-        '/blog/index.html': render_blog_index(env),
+        get_path('index'): render_template(env, 'home/index.html'),
+        get_path('projects'): render_template(env, 'home/projects.html'),
+        get_path('blog'): render_blog_index(env),
         # TODO: project euler count?
     }
 
     for post in get_posts():
-        pages[get_post_url(post)] = render_post(env, post)
+        pages[get_path('post', post=post)] = render_post(env, post)
 
     for tag in get_all_tags():
-        pages[get_tag_url(tag)] = render_blog_index(env, tag=tag)
+        pages[get_path('tag', tag=tag)] = render_blog_index(env, tag=tag)
 
     return pages
 
@@ -61,13 +64,6 @@ def render_template(env, template_name, context=None):
 
     return env.get_template(template_name).render(**ctx)
 
-
-def get_post_url(post):
-    return '/post/{}.html'.format(slugify(post.title))
-
-
-def get_tag_url(tag):
-    return '/post/tag/{}.html'.format(slugify(tag))
 
 
 def render_blog_index(env, tag=None):

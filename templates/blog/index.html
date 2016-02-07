@@ -16,7 +16,7 @@
 	    {% for bp in blog_posts %}
 		<div class="blog-post-listing">
 		    <span class="blog-post-title">
-			<a href="{{ bp|get_post_url }}">{{ bp.title }}</a>
+			<a href="{{ get_url('post', post=bp) }}">{{ bp.title }}</a>
 		    </span>
 		    <span class="blog-post-info">
 			({{ bp.datetime }})
@@ -24,7 +24,7 @@
 			    <br />
 			    <span class="blog-post-tags">Tags:
 				{% for tag in bp.tags %}
-				    <a href="{{ tag|get_tag_url }}">{{ tag }}</a>
+				    <a href="{{ get_url('tag', tag=tag) }}">{{ tag }}</a>
 				{% endfor %}
 			    </span>
 			{% endif %}

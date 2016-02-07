@@ -12,13 +12,13 @@
 	    <p class="next-and-prev">
 		{% if prev %}
 		    <span class="prev">
-			Prev: <a href="{{ prev|get_post_url }}">{{ prev.title }}</a>
+			Prev: <a href="{{ get_url('post', post=prev) }}">{{ prev.title }}</a>
 		    </span>
 		{% endif %}
 
 		{% if next %}
 		    <span class="next">
-			Next: <a href="{{ next|get_post_url }}">{{ next.title }}</a>
+			Next: <a href="{{ get_url('post', post=next) }}">{{ next.title }}</a>
 		    </span>
 		{% endif %}
 	{% endif %}
@@ -35,7 +35,7 @@
 	    <p>
 		<span class="tags">Tags:
 		    {% for tag in bp.tags %}
-			<a href="{{ tag|get_tag_url }}">{{ tag }}</a>
+			<a href="{{ get_url('tag', tag=tag) }}">{{ tag }}</a>
 		    {% endfor %}
 		</span>
 	    </p>
