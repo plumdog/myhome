@@ -105,7 +105,7 @@ def get_posts():
     posts = []
     for fpath in os.listdir(posts_dir):
         full_fpath = os.path.join(posts_dir, fpath)
-        if full_fpath.endswith('.txt'):
+        if (not fpath.startswith('.')) and full_fpath.endswith('.txt'):
             with open(full_fpath) as f:
                 content = f.read()
                 posts.append(get_post(content))
