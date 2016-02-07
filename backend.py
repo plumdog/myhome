@@ -1,7 +1,6 @@
 import os
 import functools
 
-
 from slugify import slugify
 from dateutil.parser import parse as parse_datetime
 
@@ -46,57 +45,93 @@ class BlogPost(object):
         return self.adj_post(next=False)
 
 
-def goto_line(gen, startswith):
-    while True:
-        line = next(gen)
-        if line.startswith(startswith):
-            return line
+class Parser(object):
 
-def get_simple_section(gen, startswith):
-    line = goto_line(gen, startswith)
-    rest = line[len(startswith):].strip()
-    matched_lines = [rest]
-    line = next(gen)
-    while line.strip():
-        matched_lines.append(line)
-        line = next(gen)
-    return matched_lines
+    TITLE = 'Title:'
+    SUBTITLE = 'Subtitle:'
+    TAGS = 'Tags:'
+    DATETIME = 'Datetime:'
+    CONTENT = 'Content:'
+
+    TITLE_KEY = 'title'
+    SUBTITLE_KEY = 'subtitle'
+    TAGS_KEY = 'tags'
+    DATETIME_KEY = 'datetime'
+    CONTENT_KEY = 'content'
+
+    sections = {
+        TITLE_KEY: TITLE,
+        SUBTITLE_KEY: SUBTITLE,
+        TAGS_KEY: TAGS,
+        DATETIME_KEY: DATETIME,
+        CONTENT_KEY: CONTENT,
+    }
+
+    MULTILINE_SECTIONS = [
+        CONTENT,
+    ]
+
+    def __init__(self, lines):
+        self.lines = lines
+
+        self.last_line_blank = True
+        self.current_section = None
+
+        self.output = {
+            self.TITLE_KEY: [],
+            self.SUBTITLE_KEY: [],
+            self.TAGS_KEY: [],
+            self.DATETIME_KEY: [],
+            self.CONTENT_KEY: [],
+        }
+
+    def handle_line(self, line):
+        if self.last_line_blank:
+
+            if self.current_section not in self.MULTILINE_SECTIONS:
+                self.current_section = None
+
+            for section in self.sections.values():
+                if line.startswith(section):
+                    self.current_section = section
+                    line = line[len(section):].strip()
+                    break
+
+        if self.current_section:
+            self._append_line_to_current_section(line)
+        
+
+    def _get_output(self, section):
+        mapping = {v: k for k, v in self.sections.items()}
+        section_key = mapping[section]
+        return self.output[section_key]
+
+    def _append_line_to_current_section(self, line):
+        output = self._get_output(self.current_section)
+        output.append(line)
+
+    def get_post(self):
+        for line in self.lines:
+            self.handle_line(line)
+
+        title = ' '.join(self.output[self.TITLE_KEY])
+        subtitle = ' '.join(self.output[self.SUBTITLE_KEY])
+        tags_lines = self.output[self.TAGS_KEY]
+        tags = [t.strip() for t in ','.join(tags_lines).split(',') if t.strip()]
+        datetime = parse_datetime(' '.join(self.output[self.DATETIME_KEY]))
+        content = '\n'.join(self.output[self.CONTENT_KEY])
+
+        post = BlogPost()
+        post.title = title
+        post.subtitle = subtitle
+        post.tags = tags
+        post.datetime = datetime
+        post.content = content
+        return post
 
 
-def get_post(content):
-    lines = (l for l in content.splitlines())
-
-    title_lines = get_simple_section(lines, 'Title:')
-    subtitle_lines = get_simple_section(lines, 'Subtitle:')
-    tags_lines = get_simple_section(lines, 'Tags:')
-    datetime_lines = get_simple_section(lines, 'Datetime:')
-
-    line = goto_line(lines, 'Content:')
-    rest = line[len('Content:'):].strip()
-    content_lines = []
-    if rest:
-        content_lines.append(rest)
-    while True:
-        try:
-            line = next(lines)
-        except StopIteration:
-            break
-        else:
-            content_lines.append(line)
-
-    title = ' '.join(title_lines)
-    subtitle = ' '.join(subtitle_lines)
-    tags = [t.strip() for t in ','.join(tags_lines).split(',') if t.strip()]
-    datetime = parse_datetime(' '.join(datetime_lines))
-    content = '\n'.join(content_lines)
-
-    post = BlogPost()
-    post.title = title
-    post.subtitle = subtitle
-    post.tags = tags
-    post.datetime = datetime
-    post.content = content
-    return post
+def get_post(lines):
+    return Parser(lines).get_post()
 
 
 @functools.lru_cache(maxsize=None)
@@ -107,8 +142,8 @@ def get_posts():
         full_fpath = os.path.join(posts_dir, fpath)
         if (not fpath.startswith('.')) and full_fpath.endswith('.txt'):
             with open(full_fpath) as f:
-                content = f.read()
-                posts.append(get_post(content))
+                lines = f.read().splitlines()
+                posts.append(get_post(lines))
     return sorted(posts, key=lambda p: p.datetime)
 
 def get_all_tags():
