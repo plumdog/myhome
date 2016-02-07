@@ -71,8 +71,8 @@ def render_blog_index(env, tag=None):
         blog_posts = get_posts_for_tag(tag)
         tag = slug_tag_to_readable(tag)
     else:
-        blog_posts = reversed(get_posts())
-    context = {'blog_posts': blog_posts, 'tag': tag}
+        blog_posts = get_posts()
+    context = {'blog_posts': reversed(blog_posts), 'tag': tag}
     return render_template(env, 'blog/index.html', context)
     
 
