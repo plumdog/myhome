@@ -1,0 +1,36 @@
+Title: Back to Static
+
+Subtitle: I'm better at version control than at doing backups
+
+Tags:
+
+Datetime: 2016-02-07 15:25:30+00:00
+
+Live: True
+
+Content:
+
+So I've moved this site to just use static HTML files, using Jinja2 as
+templating. The benefit of this is that it means everything is stored
+in version control and there is no database.
+
+Having no database removes the hassle of having to deal with
+backups. All the data for the site that I care about is checked into
+git, and that's the end of it. This make it much much harder for me to
+lose data and means I have the history of any changes.
+
+This also means that I can type into a text file rather than into a
+browser window.
+
+Hosting is still (at present) on Heroku, which has the following benefits:
+
+ - being free, for a site of this size
+ - I have already setup the DNS
+ - I already have an account on Heroku
+
+However, the deployment is a little bit of a hack. It uses the fact
+that Heroku's default PHP deployment just serves static files. So we
+do just enough to let Heroku believe that we are deploying PHP, and
+the rest just happens. Moving it to S3 would probably make more sense,
+but there's not much incentive given that Heroku is free and good
+enough for what I want it to do.
