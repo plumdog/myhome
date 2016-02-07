@@ -103,6 +103,8 @@ def main():
     shutil.copytree(os.path.join(BASE_DIR, 'static'),
                     os.path.join(HTML_DIR, 'static'))
 
+    shutil.copy(os.path.join(BASE_DIR, 'robots.txt'),
+                os.path.join(HTML_DIR, 'robots.txt'))
 
 if __name__ == '__main__':
     main()
