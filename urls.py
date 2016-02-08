@@ -8,6 +8,7 @@ urls = Urls()
 urls.add('index', '/')
 urls.add('projects', '/projects/')
 urls.add('blog', '/blog/')
+urls.add('404.html', '/404.html')
 urls.add('post', '/post/{slug}.html',
          format_func=lambda **kwargs: dict(slug=slugify(kwargs['post'].title)))
 urls.add('tag', '/post/tag/{slug}.html',

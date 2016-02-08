@@ -43,6 +43,7 @@ def get_all_pages():
     pages = {
         get_path('index'): render_template(env, 'index.html'),
         get_path('projects'): render_template(env, 'projects.html'),
+        get_path('404.html'): render_template(env, '404.html'),
         get_path('blog'): render_blog_index(env),
         # TODO: project euler count?
     }
