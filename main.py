@@ -41,8 +41,8 @@ def get_all_pages():
     env.globals.update(extra_globals)
 
     pages = {
-        get_path('index'): render_template(env, 'home/index.html'),
-        get_path('projects'): render_template(env, 'home/projects.html'),
+        get_path('index'): render_template(env, 'index.html'),
+        get_path('projects'): render_template(env, 'projects.html'),
         get_path('blog'): render_blog_index(env),
         # TODO: project euler count?
     }
