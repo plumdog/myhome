@@ -1,0 +1,33 @@
+Title: Python Dev - Starting Steps
+
+Subtitle: I should write this down
+
+Tags: Python, Learning
+
+Datetime: 2016-02-07 22:14:00+00:00
+
+Live: True
+
+Content:
+
+Mostly, https://docs.python.org/devguide/ is a good resource. However,
+one thing it did not mention which had me stumped was that if you get
+an error like `Failed to build modules: time`, then you need to run
+`make distclean`.
+
+Also, Python dev uses `hg`, which looks to have the same basic
+structures as git. Branches, tags, etc, but still has a cognitive
+overhead for me. Though I believe they are moving it to GitHub which
+will _definitely_ encourage me to contribute more, or at least reduce
+the impediment for me to contribute.
+
+However, I have found that the procedure with each bug/issue/ticket is
+a little confusing. Perhaps there's a page I need to read properly,
+but it seems slightly unclear to me. There is a page explaining things
+about the issue tracker, but - in very open source style - is: here
+are the things, here is what they mean. But no actual explanations of
+the questions you might actually have or example workflows. For
+example, "my" ticket is <https://bugs.python.org/issue25195>, but I
+don't know if there's something I need to do next. Oh well, I think
+everything is currently correct, and I'm waiting on someone else
+looking it over and making a decision about it.
