@@ -10,32 +10,32 @@
     <h1>Blog</h1>
 
     {% if tag %}
-	    <p>Matching tag: &quot;{{ tag }}&quot;</p>
+        <p>Matching tag: &quot;{{ tag }}&quot;</p>
     {% endif %}
 
     {% if blog_posts %}
-	    <div class="blog-posts">
-	        {% for bp in blog_posts %}
-		        <div class="blog-post-listing">
-		            <span class="blog-post-title">
-			            <a href="{{ get_url('post', post=bp) }}">{{ bp.title }}</a>
-		            </span>
-		            <span class="blog-post-info">
-			            ({{ bp.datetime }})
-			            {% if bp.tags %}
-			                <br />
-			                <span class="blog-post-tags">Tags:
-				                {% for tag in bp.tags %}
-				                    <a href="{{ get_url('tag', tag=tag) }}">{{ tag }}</a>
-				                {% endfor %}
-			                </span>
-			            {% endif %}
-		            </span>
-		            <div style="clear:both"></div>
-		        </div>
-	        {% endfor %}
-	    </div>
+        <div class="blog-posts">
+            {% for bp in blog_posts %}
+                <div class="blog-post-listing">
+                    <span class="blog-post-title">
+                        <a href="{{ get_url('post', post=bp) }}">{{ bp.title }}</a>
+                    </span>
+                    <span class="blog-post-info">
+                        ({{ bp.datetime }})
+                        {% if bp.tags %}
+                            <br />
+                            <span class="blog-post-tags">Tags:
+                                {% for tag in bp.tags %}
+                                    <a href="{{ get_url('tag', tag=tag) }}">{{ tag }}</a>
+                                {% endfor %}
+                            </span>
+                        {% endif %}
+                    </span>
+                    <div style="clear:both"></div>
+                </div>
+            {% endfor %}
+        </div>
     {% else %}
-	    <p>No Items</p>
+        <p>No Items</p>
     {% endif %}
 {% endblock %}
