@@ -2,45 +2,47 @@
 
 {% block title %}{{ super() }} - {{ bp.title }}{% endblock %}
 
-{% block description %}{{ super() }} - {{ bp.title }}{% if bp.subtitle %} (or {{ bp.subtitle }}){% endif %}{% endblock %}
+{% block description %}
+    {{ super() }} - {{ bp.title }}{% if bp.subtitle %} (or {{ bp.subtitle }}){% endif %}
+{% endblock %}
 
 {% block content %}
 
     <div class="blog-post">
 
-	{% if prev or next %}
-	    <p class="next-and-prev">
-		{% if prev %}
-		    <span class="prev">
-			Prev: <a href="{{ get_url('post', post=prev) }}">{{ prev.title }}</a>
-		    </span>
-		{% endif %}
+	    {% if prev or next %}
+	        <p class="next-and-prev">
+		        {% if prev %}
+		            <span class="prev">
+			            Prev: <a href="{{ get_url('post', post=prev) }}">{{ prev.title }}</a>
+		            </span>
+		        {% endif %}
 
-		{% if next %}
-		    <span class="next">
-			Next: <a href="{{ get_url('post', post=next) }}">{{ next.title }}</a>
-		    </span>
-		{% endif %}
-	{% endif %}
-
-	<div class="titles">
-	    <h2>{{ bp.title }}</h2>
-	    {% if bp.subtitle %}
-		<p class="or">~~ or ~~</p>
-		<h3 class="subtitle">{{ bp.subtitle }}</h3>
+		        {% if next %}
+		            <span class="next">
+			            Next: <a href="{{ get_url('post', post=next) }}">{{ next.title }}</a>
+		            </span>
+		        {% endif %}
 	    {% endif %}
-	</div>
 
-	{% if bp.tags %}
-	    <p>
-		<span class="tags">Tags:
-		    {% for tag in bp.tags %}
-			<a href="{{ get_url('tag', tag=tag) }}">{{ tag }}</a>
-		    {% endfor %}
-		</span>
-	    </p>
-	{% endif %}
-	<div class="blog-post-content">{{ bp.content|markdown }}</div>
+	    <div class="titles">
+	        <h2>{{ bp.title }}</h2>
+	        {% if bp.subtitle %}
+		        <p class="or">~~ or ~~</p>
+		        <h3 class="subtitle">{{ bp.subtitle }}</h3>
+	        {% endif %}
+	    </div>
+
+	    {% if bp.tags %}
+	        <p>
+		        <span class="tags">Tags:
+		            {% for tag in bp.tags %}
+			            <a href="{{ get_url('tag', tag=tag) }}">{{ tag }}</a>
+		            {% endfor %}
+		        </span>
+	        </p>
+	    {% endif %}
+	    <div class="blog-post-content">{{ bp.content|markdown }}</div>
     </div>
 
 {% endblock %}
