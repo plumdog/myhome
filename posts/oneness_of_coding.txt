@@ -1,0 +1,85 @@
+Title: Holism in writing software
+
+Subtitle: A bit of a grumble about comments and explanations
+
+Tags: Learning
+
+Datetime: 2016-07-02 21:49:48+01:00
+
+Live: True
+
+Content:
+
+For many aspects of programming, we put strong emphasis on
+division. Separation of concerns, abstraction, information
+hiding. This is undoubtedly important for writing software. But this
+is focussed very much at the nuts-and-bolts level of actually writing
+some code.
+
+I want to think a bit more holistically about the process of writing
+software. About a project more generally, about all those
+separated-but-interrelated parts that make up the whole. Not just each
+component of the system, but also the tests, the documentation, the
+configuration, the deployment strategy, the business context. All of
+this is part of the knowledge and understanding that we have to impart
+to each other, and recall for ourselves. The plainer we can make this,
+the better.
+
+Now to take this idea back into the realm of actually writing
+code. Every bit of code in a project looks the way it does because of
+some reasoning. That reasoning may be due to any number of things:
+it's how your framework says it should be; it's how the language says
+it should be; it's best practice; it's just how the remote API works;
+it's how the customer wanted it; it's how we thought the customer
+wanted it, and now we're stuck like that. Many of these will be
+clear. Good languages and frameworks try to provide standard ways of
+doing the standard things. They generally try to make it so the simple
+stuff doesn't take many lines of code and they are light on
+boilerplate. So I would claim there's a reasonably high
+"weirdness-factor" in the lines of code that you actually write.
+
+When you write some code that is weird, you should make it plain why
+you are doing so.
+
+It's all well and good writing a comment to explain that you are doing
+a weird thing. But why are you doing it? As the person reading it
+later, my immediate question is: why is this like this? For all I am
+totally in favour of code being self-documenting, it is really hard to
+do any explanation of "why" with the code itself. If you find yourself
+writing a comment that just explains what the code does, consider
+removing it. I can always run the code later and find out, and if it
+is not clear what your code is doing, have you written it as clearly
+as possible?. But a comment that explains why something is a bit weird
+- that is really valuable. Because maybe later, the sands have shifted
+and the reasons for that weirdness have gone away. Or maybe the new
+version of some library removes the need for it. Or maybe - just maybe
+- you thought you needed to do a weird thing, but you didn't. This
+information is super useful for making future decisions about the
+code. Write all your code like it is going to be worked on next by
+someone who has solid knowledge of the language and common libraries,
+but that's about it. Do not rely on them having been in the meeting
+you were in. Do not rely on them having seen version one if you're now
+writing version two. Do not rely on them being able to ask you
+questions.
+
+And this idea also follows us over into tests. Tests and comments are
+close friends. They both tell us things about our code. Hopefully your
+tests can demonstrate how the code works (another reason to comment
+this judiciously), and hopefully they can be clearly testing valid
+things. But when they can't and the reason why the result of something
+is-what-it-is is not clear, then an explanation is valuable.
+
+With this example of where the bigger picture counts, lets step
+outwards again. Explanations are part of the larger scope of a
+project, and the larger problem of handling the assortment of
+knowledge, decisions and history that is all very much specific to
+that domain. And this is a social problem as opposed to a technical
+one. As a breed, programmers don't always lean towards the explainer
+or the communicator. And at the extreme, may fall foul of being quite
+happy to not explain: if you can't understand it, that's your
+problem. We should make effort to pull strongly in the opposite
+direction. We are prone to diving down rabbit holes: both small,
+problem specific ones, but also far larger project-wide ones. And it
+is easy to forget how much arcane knowledge you have accrued. That
+extra bit of time to give a useful and more broadly meaningful
+explanation will surely be valuable.
