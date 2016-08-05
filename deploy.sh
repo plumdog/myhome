@@ -14,7 +14,7 @@ python main.py || error "Unable to build html pages"
 
 cp CNAME _html/
 
-cd _html || error "Unable to move int html directyr"
+cd _html || error "Unable to move into html directory"
 
 git init
 git add .
