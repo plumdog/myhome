@@ -37,6 +37,6 @@ I just used jQuery and Bootstrap (because doing DOM stuff with
 JavaScript without jQuery is yucky, and making any web page look OK
 without Bootstrap is faffy).
 
-The finished article is at http://www.plumdog.co.uk/tree_identifier/
-and hopefully it will evolve over time to get more extensive and
-easier to use.
+The finished article is at [hosted
+here](http://www.plumdog.co.uk/tree_identifier/) and hopefully it will
+evolve over time to get more extensive and easier to use.
