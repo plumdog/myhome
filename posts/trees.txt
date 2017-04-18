@@ -1,0 +1,42 @@
+Title: Trees
+
+Subtitle: Some JavaScript writing
+
+Tags: Learning, JavaScript
+
+Datetime: 2017-04-18 21:11:04+01:00
+
+Live: True
+
+Content:
+
+I recently read a book all about trees. This made me realise that I
+could identify a concerningly small number of trees, especially given
+how generally outdoor-savvy I would like to consider myself. I used a
+couple of online tree identifiers but was frustrated by those that
+don't let you enter the features that are obvious, but rather follow
+the flow-chart question-answer pattern.
+
+So I wrote my own. I probably could have found a better one if I'd
+kept hunting (or paid for an app) but this seemed like something I
+would learn something from building. Also, it doesn't require any
+faffy deployment stuff, I can just deploy some HTML and JavaScript to
+GitHub pages and the job's done.
+
+I should possibly have used this as a chance to make something with a
+fancy JavaScript framework, but I didn't. But it did mean that I did
+some more fiddly JS stuff. It's not like the tricky bit was
+manipulating the HTML. The tricky bit was fiddling about with the
+data. I ended up writing quite a few classes which I *think* I'm OK
+with. Python tends to push me gently away from writing classes unless
+I think they are *definitely* better than the alternative, purely
+because it is so easy to make code readable without them. But in
+languages that I find to be much less readable, classes give a nice
+way of making code more readable thanks to encapsulation. In addition,
+I just used jQuery and Bootstrap (because doing DOM stuff with
+JavaScript without jQuery is yucky, and making any web page look OK
+without Bootstrap is faffy).
+
+The finished article is at www.plumdog.co.uk/tree_identifier/ and
+hopefully it will evolve over time to get more extensive and easier to
+use.
