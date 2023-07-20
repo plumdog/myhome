@@ -1,6 +1,6 @@
 Jinja2==2.11.3
 Markdown==2.6.5
-Pygments==2.7.4
+Pygments==2.15.0
 Unidecode==0.04.19
 python-dateutil==2.4.2
 python-slugify==1.2.0
